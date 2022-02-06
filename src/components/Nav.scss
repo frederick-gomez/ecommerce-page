@@ -1,0 +1,56 @@
+@import '../assets/styles/variables.scss';
+
+.nav {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1.25rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__menu {
+	flex-basis: 60%;
+}
+
+.nav__menu-container {
+	display: flex;
+	align-items: center;
+}
+
+.nav__menu-btn {
+	border: none;
+	margin-right: 0.75rem;
+}
+
+.nav__list {
+	list-style: none;
+	font-size: 1.125rem;
+	font-weight: 700;
+	display: none;
+}
+
+.nav__item {
+	padding: 0.75rem 0;
+}
+
+.nav__link {
+	color: $dark;
+	text-decoration: none;
+}
+
+.cart {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-left: auto;
+
+	svg {
+		color: $light;
+		margin: 0 1.25rem;
+	}
+
+	img {
+		max-width: 33%;
+	}
+}
