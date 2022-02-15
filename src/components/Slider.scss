@@ -1,6 +1,32 @@
-.slider {
+.slider-container {
 	img {
 		max-width: 100%;
 		object-fit: cover;
+		display: block;
+		margin: 0;
 	}
+}
+
+.slider-thumbs {
+	margin: 2.5rem;
+	display: none;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	content: '' !important;
+}
+
+.swiper-button-next {
+	background: url('../assets/icon-next.svg') center no-repeat #fff;
+	border-radius: 50%;
+	padding: 0 1.4rem;
+	right: 20px !important;
+}
+
+.swiper-button-prev {
+	background: url('../assets/icon-previous.svg') center no-repeat #fff;
+	border-radius: 50%;
+	padding: 0 1.4rem;
+	left: 20px !important;
 }

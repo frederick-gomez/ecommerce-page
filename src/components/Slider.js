@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Thumbs } from 'swiper';
+import { Navigation, Thumbs } from 'swiper';
 import './Slider.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -21,18 +21,14 @@ const Slider = () => {
 	const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 	return (
-		<div>
+		<div className='slider-container'>
 			<Swiper
-				style={{
-					'--swiper-navigation-color': '#fff',
-					'--swiper-pagination-color': '#fff',
-				}}
-				modules={[Navigation, Pagination]}
+				modules={[Navigation, Thumbs]}
 				spaceBetween={50}
 				slidesPerView={1}
 				navigation
-				pagination={{ clickable: true }}
 				loop={true}
+				thumbs={{ swiper: thumbsSwiper }}
 				className='slider'>
 				<SwiperSlide>
 					<img src={img1} alt='shoes' />
@@ -45,6 +41,27 @@ const Slider = () => {
 				</SwiperSlide>
 				<SwiperSlide>
 					<img src={img4} alt='shoes' />
+				</SwiperSlide>
+			</Swiper>
+			<Swiper
+				onSwiper={setThumbsSwiper}
+				modules={[Navigation, Thumbs]}
+				loop={true}
+				spaceBetween={0}
+				slidesPerView={4}
+				watchSlidesProgress={true}
+				className='slider-thumbs'>
+				<SwiperSlide>
+					<img src={thumb1} alt='shoes-thumbnails' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<img src={thumb2} alt='shoes-thumbnails' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<img src={thumb3} alt='shoes-thumbnails' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<img src={thumb4} alt='shoes-thumbnails' />
 				</SwiperSlide>
 			</Swiper>
 		</div>
