@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Nav.scss';
-import { ReactComponent as BrandLogo } from '../assets/logo.svg';
-import { ReactComponent as Cart } from '../assets/icon-cart.svg';
-import { ReactComponent as Menu } from '../assets/icon-menu.svg';
-import avatar from '../assets/image-avatar.png';
+import { ReactComponent as BrandLogo } from '../../assets/logo.svg';
+import { ReactComponent as Cart } from '../../assets/icon-cart.svg';
+import { ReactComponent as Menu } from '../../assets/icon-menu.svg';
+import avatar from '../../assets/image-avatar.png';
+import CartOverlay from './CartOverlay';
 
 const Nav = () => {
+	const [cartActive, setCartActive] = useState(false);
+
+	const openCart = () => {
+		if (cartActive) {
+			setCartActive(false);
+		} else {
+			setCartActive(true);
+		}
+	};
+
 	return (
 		<nav className='nav'>
 			<div className='nav__menu'>
@@ -44,9 +55,13 @@ const Nav = () => {
 				</ul>
 			</div>
 			<div className='cart'>
-				<Cart />
+				<Cart
+					className={`cart-icon ${cartActive ? 'active' : ''}`}
+					onClick={openCart}
+				/>
 				<img src={avatar} alt='User profile' />
 			</div>
+			<CartOverlay isActive={cartActive} />
 		</nav>
 	);
 };

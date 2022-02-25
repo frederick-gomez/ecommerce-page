@@ -1,4 +1,4 @@
-@import '../assets/styles/variables.scss';
+@import '../../assets/styles/variables.scss';
 
 .nav {
 	width: 90%;
@@ -7,6 +7,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 
 .nav__menu {
@@ -46,12 +47,17 @@
 	justify-content: flex-end;
 	margin-left: auto;
 
-	svg {
-		color: $light;
-		margin: 0 1.25rem;
-	}
-
 	img {
+		width: 20%;
 		max-width: 33%;
 	}
+}
+
+.cart-icon {
+	color: $light;
+	margin: 0 1.25rem;
+}
+
+.active {
+	color: $dark;
 }

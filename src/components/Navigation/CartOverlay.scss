@@ -1,0 +1,35 @@
+@import '../../assets/styles/variables.scss';
+
+.overlay {
+	display: none;
+	position: absolute;
+	top: 120%;
+	z-index: 100;
+	background: #fff;
+	height: 280px;
+	width: 100%;
+	border-radius: 15px;
+}
+
+.overlay-active {
+	display: block;
+}
+
+.overlay__container {
+	max-width: 85%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.cart__content {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	height: 66%;
+}
+
+.cart-empty {
+	color: $light;
+	font-weight: 700;
+	margin: auto;
+}

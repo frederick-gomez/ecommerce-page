@@ -1,6 +1,7 @@
 import './App.scss';
-import Nav from './components/Nav';
+import Nav from './components/Navigation/Nav';
 import Slider from './components/Slider';
+import ItemInfo from './components/ItemInfo';
 
 function App() {
 	return (
@@ -8,6 +9,7 @@ function App() {
 			<Nav />
 			<main>
 				<Slider />
+				<ItemInfo />
 			</main>
 		</>
 	);
