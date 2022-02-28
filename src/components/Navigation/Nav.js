@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import './Nav.scss';
 import { ReactComponent as BrandLogo } from '../../assets/logo.svg';
 import { ReactComponent as Cart } from '../../assets/icon-cart.svg';
@@ -19,7 +20,7 @@ const Nav = () => {
 		}
 	};
 
-	const openCart = () => {
+	const toggleCart = () => {
 		if (cartActive) {
 			setCartActive(false);
 		} else {
@@ -29,7 +30,10 @@ const Nav = () => {
 
 	return (
 		<nav className='nav'>
-			<SidebarMenu />
+			{ReactDOM.createPortal(
+				<SidebarMenu closeMenu={toggleMenu} isOpen={menuActive} />,
+				document.getElementById('overlay-root')
+			)}
 			<div className='nav__menu'>
 				<div className='nav__menu-container'>
 					<button className='nav__menu-btn' onClick={toggleMenu}>
@@ -40,8 +44,8 @@ const Nav = () => {
 			</div>
 			<div className='cart'>
 				<Cart
-					className={`cart-icon ${cartActive ? 'active' : ''}`}
-					onClick={openCart}
+					className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
+					onClick={toggleCart}
 				/>
 				<img src={avatar} alt='User profile' />
 			</div>

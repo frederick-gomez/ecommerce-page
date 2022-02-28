@@ -3,7 +3,7 @@ import './CartOverlay.scss';
 
 const CartOverlay = ({ isActive }) => {
 	return (
-		<div className={`overlay ${isActive ? 'overlay-active' : ''}`}>
+		<div className={`cart__modal ${isActive ? 'overlay-active' : ''}`}>
 			<div className='overlay__container'>
 				<div className='cart__title'>
 					<h3>Cart</h3>
