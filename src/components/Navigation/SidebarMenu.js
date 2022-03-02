@@ -1,6 +1,7 @@
 import React from 'react';
 import './SidebarMenu.scss';
 import { ReactComponent as CloseButton } from '../../assets/icon-close.svg';
+import NavList from './NavList';
 
 const SidebarMenu = (props) => {
 	return (
@@ -9,33 +10,7 @@ const SidebarMenu = (props) => {
 				<button onClick={props.closeMenu} className='close-menu-btn'>
 					<CloseButton />
 				</button>
-				<ul className='nav__list-mobile '>
-					<li className='nav__item'>
-						<a href='#' className='nav__link'>
-							Collections
-						</a>
-					</li>
-					<li className='nav__item'>
-						<a href='#' className='nav__link'>
-							Men
-						</a>
-					</li>
-					<li className='nav__item'>
-						<a href='#' className='nav__link'>
-							Women
-						</a>
-					</li>
-					<li className='nav__item'>
-						<a href='#' className='nav__link'>
-							About
-						</a>
-					</li>
-					<li className='nav__item'>
-						<a href='#' className='nav__link'>
-							Contact
-						</a>
-					</li>
-				</ul>
+				<NavList />
 			</nav>
 			<div onClick={props.closeMenu} className='backdrop'></div>
 		</div>
