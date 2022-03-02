@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ItemInfo.scss';
+import Button from '../components/UI/Button';
 import { ReactComponent as Cart } from '../assets/icon-cart.svg';
 import { ReactComponent as Plus } from '../assets/icon-plus.svg';
 import { ReactComponent as Minus } from '../assets/icon-minus.svg';
@@ -19,7 +20,7 @@ const ItemInfo = () => {
 	console.log(itemAmount);
 
 	return (
-		<div className='item-container'>
+		<div className='container'>
 			<h2 className='item__brand'>sneaker company</h2>
 			<h1 className='item__title'>Fall Limited Edition Sneakers</h1>
 			<p className='item__text'>
@@ -50,12 +51,12 @@ const ItemInfo = () => {
 						<Plus />
 					</button>
 				</div>
-				<button className='add-to-cart'>
+				<Button>
 					<span className='add-to-cart__svg'>
 						<Cart />
 					</span>
 					Add to cart
-				</button>
+				</Button>
 			</div>
 		</div>
 	);

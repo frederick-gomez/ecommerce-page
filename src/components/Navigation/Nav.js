@@ -43,10 +43,12 @@ const Nav = () => {
 				</div>
 			</div>
 			<div className='cart'>
-				<Cart
-					className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
-					onClick={toggleCart}
-				/>
+				<button className='cart-btn'>
+					<Cart
+						className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
+						onClick={toggleCart}
+					/>
+				</button>
 				<img src={avatar} alt='User profile' />
 			</div>
 			<CartOverlay isActive={cartActive} />

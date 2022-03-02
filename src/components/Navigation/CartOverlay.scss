@@ -3,12 +3,13 @@
 .cart__modal {
 	display: none;
 	position: absolute;
-	top: 15%;
-	left: 2.5%;
+	top: 120%;
+	right: 0;
 	z-index: 100;
 	background: #fff;
-	height: 280px;
-	width: 95%;
+	min-height: 260px;
+	width: 100%;
+	max-width: 500px;
 	border-radius: 15px;
 	box-shadow: 10px 10px 35px -5px rgba(0, 0, 0, 0.5);
 }
@@ -17,17 +18,11 @@
 	display: block;
 }
 
-.overlay__container {
-	max-width: 85%;
-	margin: 0 auto;
-	height: 100%;
-}
-
 .cart__content {
+	height: 160px;
 	display: flex;
 	justify-content: center;
-	align-content: center;
-	height: 66%;
+	align-items: center;
 }
 
 .cart-empty {

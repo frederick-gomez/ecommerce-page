@@ -1,10 +1,5 @@
 @import '../assets/styles/variables.scss';
 
-.item-container {
-	max-width: 85%;
-	margin: 0 auto;
-}
-
 .item__brand {
 	text-transform: uppercase;
 	color: $primary;
@@ -68,21 +63,6 @@
 	color: $dark;
 	font-weight: 700;
 	font-size: 1.1rem;
-}
-
-.add-to-cart {
-	background-color: $primary;
-	border: none;
-	border-radius: 10px;
-	display: block;
-	width: 100%;
-	padding: 1rem 1.25rem;
-	font-weight: 700;
-	font-size: 1rem;
-	color: $white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .add-to-cart__svg {
