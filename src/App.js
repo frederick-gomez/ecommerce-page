@@ -6,7 +6,7 @@ import ItemInfo from './components/ItemInfo';
 import CartContext from './components/Context/cart-context';
 
 function App() {
-	const [cartAmount, setCartAmount] = useState();
+	const [cartAmount, setCartAmount] = useState(0);
 	const updateAmount = (amount) => {
 		setCartAmount(amount);
 	};
