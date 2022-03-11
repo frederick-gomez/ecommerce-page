@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ItemInfo.scss';
 import Button from '../components/UI/Button';
+import ItemData from '../assets/data/ItemData';
 import { ReactComponent as Cart } from '../assets/icon-cart.svg';
 import { ReactComponent as Plus } from '../assets/icon-plus.svg';
 import { ReactComponent as Minus } from '../assets/icon-minus.svg';
@@ -17,19 +18,14 @@ const ItemInfo = () => {
 		}
 		setItemAmount(itemAmount - 1);
 	};
-	console.log(itemAmount);
 
 	return (
 		<div className='container'>
 			<h2 className='item__brand'>sneaker company</h2>
-			<h1 className='item__title'>Fall Limited Edition Sneakers</h1>
-			<p className='item__text'>
-				These low-profile sneakers are your perfect casual wear companion.
-				Featuring a durable rubber outer sole, they'll withstand everything the
-				weather can offer.
-			</p>
+			<h1 className='item__title'>{ItemData.title}</h1>
+			<p className='item__text'>{ItemData.description}</p>
 			<div className='price'>
-				<p className='price__amount'>$125.00</p>
+				<p className='price__amount'>${ItemData.price}</p>
 				<p className='price__discount'>50%</p>
 				<p className='price__total'>$250.00</p>
 			</div>
@@ -41,7 +37,7 @@ const ItemInfo = () => {
 					<input
 						type='number'
 						id='amount-field'
-						class='amount-field'
+						className='amount-field'
 						disabled='disabled'
 						min={0}
 						max={10}
