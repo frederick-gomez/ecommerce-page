@@ -7,6 +7,7 @@ import { ReactComponent as Menu } from '../../assets/icon-menu.svg';
 import avatar from '../../assets/image-avatar.png';
 import CartOverlay from './CartOverlay';
 import SidebarMenu from './SidebarMenu';
+import ItemAmount from '../UI/ItemAmount';
 
 const Nav = () => {
 	const [cartActive, setCartActive] = useState(false);
@@ -44,12 +45,13 @@ const Nav = () => {
 			</div>
 			<div className='cart'>
 				<button className='cart-btn'>
+					<ItemAmount amount={1} />
 					<Cart
 						className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
 						onClick={toggleCart}
 					/>
 				</button>
-				<img src={avatar} alt='User profile' />
+				<img className='user-avatar' src={avatar} alt='User profile' />
 			</div>
 			<CartOverlay isActive={cartActive} />
 		</nav>

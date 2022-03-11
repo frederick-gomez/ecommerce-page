@@ -1,0 +1,14 @@
+@import '../../assets/styles/variables.scss';
+
+.item-amount {
+	position: absolute;
+	top: -30%;
+	right: -25%;
+	background-color: $primary;
+	color: $white;
+	line-height: 1;
+	font-size: 12px;
+	margin: 0;
+	padding: 0.1rem 0.3rem;
+	border-radius: 40%;
+}
