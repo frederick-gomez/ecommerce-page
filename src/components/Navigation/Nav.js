@@ -9,7 +9,7 @@ import CartOverlay from './CartOverlay';
 import SidebarMenu from './SidebarMenu';
 import ItemAmount from '../UI/ItemAmount';
 
-const Nav = () => {
+const Nav = (props) => {
 	const [cartActive, setCartActive] = useState(false);
 	const [menuActive, setMenuActive] = useState(false);
 
@@ -45,7 +45,7 @@ const Nav = () => {
 			</div>
 			<div className='cart'>
 				<button className='cart-btn'>
-					<ItemAmount amount={1} />
+					<ItemAmount amount={props.amount} />
 					<Cart
 						className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
 						onClick={toggleCart}

@@ -6,7 +6,7 @@ import { ReactComponent as Cart } from '../assets/icon-cart.svg';
 import { ReactComponent as Plus } from '../assets/icon-plus.svg';
 import { ReactComponent as Minus } from '../assets/icon-minus.svg';
 
-const ItemInfo = () => {
+const ItemInfo = (props) => {
 	const [itemAmount, setItemAmount] = useState(0);
 
 	const increaseAmount = () => {
@@ -17,6 +17,10 @@ const ItemInfo = () => {
 			return;
 		}
 		setItemAmount(itemAmount - 1);
+	};
+
+	const resetAmount = () => {
+		setItemAmount(0);
 	};
 
 	return (
@@ -47,7 +51,11 @@ const ItemInfo = () => {
 						<Plus />
 					</button>
 				</div>
-				<Button>
+				<Button
+					onClick={() => {
+						props.onClick(itemAmount);
+						resetAmount();
+					}}>
 					<span className='add-to-cart__svg'>
 						<Cart />
 					</span>
