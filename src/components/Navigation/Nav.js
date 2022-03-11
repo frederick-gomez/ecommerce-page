@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import CartContext from '../Context/cart-context';
 import './Nav.scss';
 import { ReactComponent as BrandLogo } from '../../assets/logo.svg';
 import { ReactComponent as Cart } from '../../assets/icon-cart.svg';
@@ -12,6 +13,8 @@ import ItemAmount from '../UI/ItemAmount';
 const Nav = (props) => {
 	const [cartActive, setCartActive] = useState(false);
 	const [menuActive, setMenuActive] = useState(false);
+
+	const ctx = useContext(CartContext);
 
 	const toggleMenu = () => {
 		if (menuActive) {
@@ -45,7 +48,7 @@ const Nav = (props) => {
 			</div>
 			<div className='cart'>
 				<button className='cart-btn'>
-					<ItemAmount amount={props.amount} />
+					<ItemAmount amount={ctx} />
 					<Cart
 						className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
 						onClick={toggleCart}
@@ -53,7 +56,7 @@ const Nav = (props) => {
 				</button>
 				<img className='user-avatar' src={avatar} alt='User profile' />
 			</div>
-			<CartOverlay isActive={cartActive} />
+			<CartOverlay isActive={cartActive} amount={ctx} />
 		</nav>
 	);
 };

@@ -1,16 +1,16 @@
 import React from 'react';
 import './CartItem.scss';
+import ItemData from '../../assets/data/ItemData';
 import thumb1 from '../../assets/image-product-1-thumbnail.jpg';
 import { ReactComponent as DeleteIcon } from '../../assets/icon-delete.svg';
 import Button from '../UI/Button';
 
 const CartItem = (props) => {
-	const itemPrice = 125.0;
-	const itemAmount = 3;
+	const itemPrice = parseFloat(125).toFixed(2);
 
 	const totalPrice = (price, amount) => {
 		const totalSum = price * amount;
-		return totalSum;
+		return parseFloat(totalSum).toFixed(2);
 	};
 
 	return (
@@ -20,11 +20,11 @@ const CartItem = (props) => {
 					<img className='cart-item__img' src={thumb1} alt='Item thumbnail' />
 				</div>
 				<div className='cart-item__content'>
-					<p>Fall Limited Edition Sneakers</p>
+					<p>{ItemData.title}</p>
 					<p>
-						${itemPrice} x {itemAmount}
+						${itemPrice} x {props.itemAmount}
 						<span className='total-amount'>
-							${totalPrice(itemPrice, itemAmount)}
+							${totalPrice(itemPrice, props.itemAmount)}
 						</span>
 					</p>
 				</div>

@@ -29,7 +29,9 @@ const ItemInfo = (props) => {
 			<h1 className='item__title'>{ItemData.title}</h1>
 			<p className='item__text'>{ItemData.description}</p>
 			<div className='price'>
-				<p className='price__amount'>${ItemData.price}</p>
+				<p className='price__amount'>
+					${parseFloat(ItemData.price).toFixed(2)}
+				</p>
 				<p className='price__discount'>50%</p>
 				<p className='price__total'>$250.00</p>
 			</div>
