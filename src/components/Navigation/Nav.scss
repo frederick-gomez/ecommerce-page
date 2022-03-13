@@ -29,12 +29,12 @@
 	align-items: center;
 	justify-content: flex-end;
 	margin-left: auto;
+}
 
-	img {
-		width: 20%;
-		max-width: 33%;
-		margin-left: 1rem;
-	}
+.user-avatar {
+	width: 20%;
+	max-width: 33%;
+	margin-left: 1rem;
 }
 
 .cart-btn {
@@ -50,4 +50,19 @@
 
 .cart-active {
 	color: $dark;
+}
+
+@media (min-width: $desktop) {
+	.nav__menu {
+		display: flex;
+		align-items: center;
+	}
+
+	.nav__menu-btn {
+		display: none;
+	}
+
+	.user-avatar {
+		width: 33%;
+	}
 }

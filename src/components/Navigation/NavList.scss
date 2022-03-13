@@ -16,3 +16,19 @@
 	color: $dark;
 	text-decoration: none;
 }
+
+@media (min-width: $desktop) {
+	.nav__list {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+	}
+
+	.nav__item {
+		padding: 0 0.75rem;
+	}
+
+	.nav__link {
+		color: $light;
+	}
+}

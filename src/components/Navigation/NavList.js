@@ -1,9 +1,9 @@
 import React from 'react';
 import './NavList.scss';
 
-const NavList = () => {
+const NavList = (props) => {
 	return (
-		<ul className='nav__list '>
+		<ul className={`nav__list ${props.className}`}>
 			<li className='nav__item'>
 				<a href='#' className='nav__link'>
 					Collections

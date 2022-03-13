@@ -9,6 +9,7 @@ import avatar from '../../assets/image-avatar.png';
 import CartOverlay from './CartOverlay';
 import SidebarMenu from './SidebarMenu';
 import ItemAmount from '../UI/ItemAmount';
+import NavList from './NavList';
 
 const Nav = (props) => {
 	const [cartActive, setCartActive] = useState(false);
@@ -45,6 +46,7 @@ const Nav = (props) => {
 					</button>
 					<BrandLogo />
 				</div>
+				<NavList className='disable' />
 			</div>
 			<div className='cart'>
 				<button className='cart-btn'>
