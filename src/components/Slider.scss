@@ -1,5 +1,6 @@
+@import '../assets/styles/variables.scss';
+
 .slider-container {
-	// max-height: 300px;
 	overflow: hidden;
 
 	img {
@@ -32,4 +33,20 @@
 	border-radius: 50%;
 	padding: 0 1.4rem;
 	left: 20px !important;
+}
+
+@media (min-width: $desktop) {
+	.slider-container {
+		max-width: 500px;
+		margin-right: 2rem;
+
+		img {
+			border-radius: 15px;
+		}
+	}
+
+	.slider-thumbs {
+		display: block;
+		cursor: pointer;
+	}
 }

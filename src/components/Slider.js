@@ -47,7 +47,7 @@ const Slider = () => {
 				onSwiper={setThumbsSwiper}
 				modules={[Navigation, Thumbs]}
 				loop={true}
-				spaceBetween={0}
+				spaceBetween={30}
 				slidesPerView={4}
 				watchSlidesProgress={true}
 				className='slider-thumbs'>

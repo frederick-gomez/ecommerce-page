@@ -14,7 +14,7 @@ function App() {
 	return (
 		<CartContext.Provider value={cartAmount}>
 			<Nav />
-			<main>
+			<main className='main-content'>
 				<Slider />
 				<ItemInfo onClick={updateAmount} />
 			</main>

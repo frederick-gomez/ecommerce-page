@@ -72,3 +72,32 @@
 		width: 18px;
 	}
 }
+
+@media (min-width: $tablet) {
+	.item__btn {
+		display: flex;
+		align-items: center;
+	}
+
+	.item__btn > * {
+		flex: 1 0 50%;
+	}
+}
+
+@media (min-width: $desktop) {
+	.item-info {
+		margin: 0;
+		display: flex;
+		align-items: center;
+		max-width: 550px;
+	}
+
+	.price {
+		display: block;
+	}
+
+	.item__title {
+		font-size: 3rem;
+		margin-bottom: 0.75em;
+	}
+}

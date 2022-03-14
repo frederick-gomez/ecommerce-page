@@ -24,45 +24,47 @@ const ItemInfo = (props) => {
 	};
 
 	return (
-		<div className='container'>
-			<h2 className='item__brand'>sneaker company</h2>
-			<h1 className='item__title'>{ItemData.title}</h1>
-			<p className='item__text'>{ItemData.description}</p>
-			<div className='price'>
-				<p className='price__amount'>
-					${parseFloat(ItemData.price).toFixed(2)}
-				</p>
-				<p className='price__discount'>50%</p>
-				<p className='price__total'>$250.00</p>
-			</div>
-			<div className='item__btn'>
-				<div className='item__amount'>
-					<button className='amount__btn' onClick={decreaseAmount}>
-						<Minus />
-					</button>
-					<input
-						type='number'
-						id='amount-field'
-						className='amount-field'
-						disabled='disabled'
-						min={0}
-						max={10}
-						value={itemAmount}
-					/>
-					<button className='amount__btn' onClick={increaseAmount}>
-						<Plus />
-					</button>
+		<div className='item-info container'>
+			<div className=''>
+				<h2 className='item__brand'>sneaker company</h2>
+				<h1 className='item__title'>{ItemData.title}</h1>
+				<p className='item__text'>{ItemData.description}</p>
+				<div className='price'>
+					<p className='price__amount'>
+						${parseFloat(ItemData.price).toFixed(2)}
+					</p>
+					<p className='price__discount'>50%</p>
+					<p className='price__total'>$250.00</p>
 				</div>
-				<Button
-					onClick={() => {
-						props.onClick(itemAmount);
-						resetAmount();
-					}}>
-					<span className='add-to-cart__svg'>
-						<Cart />
-					</span>
-					Add to cart
-				</Button>
+				<div className='item__btn'>
+					<div className='item__amount'>
+						<button className='amount__btn' onClick={decreaseAmount}>
+							<Minus />
+						</button>
+						<input
+							type='number'
+							id='amount-field'
+							className='amount-field'
+							disabled='disabled'
+							min={0}
+							max={10}
+							value={itemAmount}
+						/>
+						<button className='amount__btn' onClick={increaseAmount}>
+							<Plus />
+						</button>
+					</div>
+					<Button
+						onClick={() => {
+							props.onClick(itemAmount);
+							resetAmount();
+						}}>
+						<span className='add-to-cart__svg'>
+							<Cart />
+						</span>
+						Add to cart
+					</Button>
+				</div>
 			</div>
 		</div>
 	);

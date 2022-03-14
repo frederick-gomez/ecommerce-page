@@ -1,3 +1,5 @@
+@import './assets/styles/variables.scss';
+
 .container {
 	max-width: 85%;
 	margin: 0 auto;
@@ -5,4 +7,17 @@
 
 button {
 	cursor: pointer;
+}
+
+@media (min-width: $desktop) {
+	.main-content {
+		max-width: 90%;
+		margin: 3rem auto;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.main-content > * {
+		flex-basis: 100%;
+	}
 }

@@ -52,7 +52,7 @@
 	color: $dark;
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $tablet) {
 	.nav__menu {
 		display: flex;
 		align-items: center;
@@ -64,5 +64,11 @@
 
 	.user-avatar {
 		width: 33%;
+	}
+}
+
+@media (min-width: $desktop) {
+	.nav {
+		padding: 2.5rem 0;
 	}
 }
