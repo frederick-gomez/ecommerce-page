@@ -8,6 +8,7 @@
 		object-fit: cover;
 		display: block;
 		margin: 0;
+		cursor: pointer;
 	}
 }
 
@@ -16,6 +17,9 @@
 	display: none;
 }
 
+.swiper.slider-thumbs {
+	overflow: visible;
+}
 .swiper-button-next::after,
 .swiper-button-prev::after {
 	content: '' !important;
@@ -25,14 +29,12 @@
 	background: url('../assets/icon-next.svg') center no-repeat #fff;
 	border-radius: 50%;
 	padding: 0 1.4rem;
-	right: 20px !important;
 }
 
 .swiper-button-prev {
 	background: url('../assets/icon-previous.svg') center no-repeat #fff;
 	border-radius: 50%;
 	padding: 0 1.4rem;
-	left: 20px !important;
 }
 
 @media (min-width: $desktop) {
@@ -45,8 +47,17 @@
 		}
 	}
 
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none !important;
+	}
+
 	.slider-thumbs {
 		display: block;
 		cursor: pointer;
+	}
+
+	.outline:hover {
+		outline: 3px solid $primary;
 	}
 }

@@ -38,7 +38,7 @@ const ItemInfo = (props) => {
 				</div>
 				<div className='item__btn'>
 					<div className='item__amount'>
-						<button className='amount__btn' onClick={decreaseAmount}>
+						<button className='amount__btn hover' onClick={decreaseAmount}>
 							<Minus />
 						</button>
 						<input
@@ -50,11 +50,12 @@ const ItemInfo = (props) => {
 							max={10}
 							value={itemAmount}
 						/>
-						<button className='amount__btn' onClick={increaseAmount}>
+						<button className='amount__btn hover' onClick={increaseAmount}>
 							<Plus />
 						</button>
 					</div>
 					<Button
+						className='hover'
 						onClick={() => {
 							props.onClick(itemAmount);
 							resetAmount();

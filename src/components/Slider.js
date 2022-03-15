@@ -17,12 +17,13 @@ import thumb2 from '../assets/image-product-2-thumbnail.jpg';
 import thumb3 from '../assets/image-product-3-thumbnail.jpg';
 import thumb4 from '../assets/image-product-4-thumbnail.jpg';
 
-const Slider = () => {
+const Slider = (props) => {
 	const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 	return (
-		<div className='slider-container'>
+		<div className={`slider-container ${props.className}`}>
 			<Swiper
+				onClick={props.toggleModal}
 				modules={[Navigation, Thumbs]}
 				spaceBetween={50}
 				slidesPerView={1}
@@ -46,22 +47,22 @@ const Slider = () => {
 			<Swiper
 				onSwiper={setThumbsSwiper}
 				modules={[Navigation, Thumbs]}
-				loop={true}
+				loop={false}
 				spaceBetween={30}
 				slidesPerView={4}
 				watchSlidesProgress={true}
 				className='slider-thumbs'>
 				<SwiperSlide>
-					<img src={thumb1} alt='shoes-thumbnails' />
+					<img className='hover outline' src={thumb1} alt='shoes-thumbnails' />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={thumb2} alt='shoes-thumbnails' />
+					<img className='hover outline' src={thumb2} alt='shoes-thumbnails' />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={thumb3} alt='shoes-thumbnails' />
+					<img className='hover outline' src={thumb3} alt='shoes-thumbnails' />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={thumb4} alt='shoes-thumbnails' />
+					<img className='hover outline' src={thumb4} alt='shoes-thumbnails' />
 				</SwiperSlide>
 			</Swiper>
 		</div>

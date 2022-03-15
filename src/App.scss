@@ -20,4 +20,8 @@ button {
 	.main-content > * {
 		flex-basis: 100%;
 	}
+
+	.hover:hover {
+		filter: opacity(75%);
+	}
 }

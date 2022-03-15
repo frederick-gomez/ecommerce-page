@@ -2,6 +2,7 @@ import React from 'react';
 import './SidebarMenu.scss';
 import { ReactComponent as CloseButton } from '../../assets/icon-close.svg';
 import NavList from './NavList';
+import Backdrop from '../UI/Backdrop';
 
 const SidebarMenu = (props) => {
 	return (
@@ -12,7 +13,7 @@ const SidebarMenu = (props) => {
 				</button>
 				<NavList />
 			</nav>
-			<div onClick={props.closeMenu} className='backdrop'></div>
+			<Backdrop onClick={props.closeMenu} />
 		</div>
 	);
 };
