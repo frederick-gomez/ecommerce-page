@@ -10,10 +10,6 @@ function App() {
 	const [cartAmount, setCartAmount] = useState(0);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const updateAmount = (amount) => {
-		setCartAmount(amount);
-	};
-
 	const toggleModal = () => {
 		if (!isModalOpen) {
 			setIsModalOpen(true);
@@ -23,12 +19,12 @@ function App() {
 	};
 
 	return (
-		<CartContext.Provider value={cartAmount}>
+		<CartContext.Provider value={[cartAmount, setCartAmount]}>
 			<Nav />
 			<main className='main-content'>
 				<Slider toggleModal={toggleModal} />
 				{isModalOpen ? <GalleryModal closeModal={toggleModal} /> : null}
-				<ItemInfo onClick={updateAmount} />
+				<ItemInfo onClick={setCartAmount} />
 			</main>
 		</CartContext.Provider>
 	);

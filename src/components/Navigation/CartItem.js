@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../Context/cart-context';
 import './CartItem.scss';
 import ItemData from '../../assets/data/ItemData';
 import thumb1 from '../../assets/image-product-1-thumbnail.jpg';
@@ -6,6 +7,8 @@ import { ReactComponent as DeleteIcon } from '../../assets/icon-delete.svg';
 import Button from '../UI/Button';
 
 const CartItem = (props) => {
+	const [cartAmount, setCartAmount] = useContext(CartContext);
+
 	const itemPrice = parseFloat(125).toFixed(2);
 
 	const totalPrice = (price, amount) => {
@@ -22,14 +25,19 @@ const CartItem = (props) => {
 				<div className='cart-item__content'>
 					<p>{ItemData.title}</p>
 					<p>
-						${itemPrice} x {props.itemAmount}
+						${itemPrice} x {cartAmount}
 						<span className='total-amount'>
-							${totalPrice(itemPrice, props.itemAmount)}
+							${totalPrice(itemPrice, cartAmount)}
 						</span>
 					</p>
 				</div>
 				<button className='delete-icon'>
-					<DeleteIcon className='delete-icon__svg' />
+					<DeleteIcon
+						className='delete-icon__svg'
+						onClick={() => {
+							setCartAmount(0);
+						}}
+					/>
 				</button>
 			</div>
 			<Button>Checkout</Button>

@@ -15,7 +15,7 @@ const Nav = (props) => {
 	const [cartActive, setCartActive] = useState(false);
 	const [menuActive, setMenuActive] = useState(false);
 
-	const ctx = useContext(CartContext);
+	const [cartAmount, setCartAmount] = useContext(CartContext);
 
 	const toggleMenu = () => {
 		if (menuActive) {
@@ -50,7 +50,7 @@ const Nav = (props) => {
 			</div>
 			<div className='cart'>
 				<button className='cart-btn'>
-					<ItemAmount amount={ctx} />
+					<ItemAmount amount={cartAmount} />
 					<Cart
 						className={`cart-icon ${cartActive ? 'cart-active' : ''}`}
 						onClick={toggleCart}
@@ -58,7 +58,7 @@ const Nav = (props) => {
 				</button>
 				<img className='user-avatar' src={avatar} alt='User profile' />
 			</div>
-			<CartOverlay isActive={cartActive} amount={ctx} />
+			<CartOverlay isActive={cartActive} amount={cartAmount} />
 		</nav>
 	);
 };
